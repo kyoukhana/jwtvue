@@ -1,0 +1,1 @@
+## boilerplate for JWT and Vue-jwt-auth
