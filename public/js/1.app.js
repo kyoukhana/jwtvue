@@ -115,7 +115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$auth.login({
                 body: this.data.body,
                 rememberMe: true,
-                redirect: {name: redirect ? redirect.from.name : 'dashadmin'},
+                redirect: {name: 'dashadmin'},
             });
 
 

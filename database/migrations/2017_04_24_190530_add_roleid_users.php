@@ -14,7 +14,7 @@ class AddRoleidUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id');
+            $table->enum('role', ['user', 'admin'])->index();
         });
     }
 

@@ -69,7 +69,7 @@
                 this.$auth.login({
                     body: this.data.body,
                     rememberMe: true,
-                    redirect: {name: redirect ? redirect.from.name : 'dashadmin'},
+                    redirect: {name: 'dashadmin'},
                 });
 
 

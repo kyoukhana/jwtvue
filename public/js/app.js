@@ -944,6 +944,7 @@ var router = new _vueRouter2.default({
     }, {
         path: '/admin/dashboard',
         name: 'dashadmin',
+        meta: { auth: 'admin' },
         component: function component(resolve) {
             __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(57)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
         },

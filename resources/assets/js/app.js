@@ -30,6 +30,7 @@ const router = new VueRouter({
     {
     path: '/admin/dashboard',
     name:'dashadmin',
+     meta: {auth: ['admin']},
     component: (resolve) => { require(['./components/views/admin/dashboard.vue'], resolve)},
      children:[
         {
