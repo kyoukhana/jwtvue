@@ -24,5 +24,20 @@ Route::group([
         'uses'=>'AuthController@login',
     ]);
 
+    Route::get('account',[
+        'middleware' => [
+            'jwt.auth'
+        ],
+        'roles' => ['administrator'],
+        'as'=>'account.show',
+        'uses' => 'AccountController@show'
+    ]);
+
+    /*User Logout */
+    Route::post('logout',[
+        'uses' => 'AuthController@logout'
+    ]);
+
+
 
 });

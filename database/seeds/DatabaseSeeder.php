@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             'lastname'=>'Youkhana',
             'email' => 'kyoukhana@gmail.com',
             'lang' => 'en',
+            'role_id'=>'1',
             'password' => bcrypt('EmuKrg2012')])->save();
 
 

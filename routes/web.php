@@ -11,6 +11,12 @@
 |
 */
 
+Route::any('/{all}', function () {
+    return view('app');
+})
+    ->where(['all' => '.*']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +24,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
