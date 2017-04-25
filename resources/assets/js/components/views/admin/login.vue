@@ -45,8 +45,8 @@
                 context: 'login context',
                 data: {
                     body: {
-                        email: '',
-                        password: ''
+                        email: 'vueauth@gmail.com',
+                        password: 'vue123'
                     },
                     rememberMe: false
                 },
@@ -69,7 +69,7 @@
                 this.$auth.login({
                     body: this.data.body,
                     rememberMe: true,
-                    redirect: {name: 'dashadmin'},
+                    redirect: '/admin/dashboard',
                 });
 
 

@@ -22,6 +22,11 @@ const router = new VueRouter({
         path: '/',
         component: (resolve) => { require(['./components/views/home.vue'], resolve)}
     },
+
+        {
+            path: '/403',
+            component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}
+        },
     {
         path: '/admin/login',
         name:'adminlogin',
@@ -50,7 +55,7 @@ Vue.router = router;
 //Vue.axios.defaults.baseURL = domainUrl;
 //Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
-Vue.http.options.root="http://www.jwt.com";
+Vue.http.options.root="http://www.kevinyoukhana.com";
 
 Vue.use(VueAuth,{
     authRedirect:'/',

@@ -14,12 +14,13 @@ class DatabaseSeeder extends Seeder
 
 
         factory(App\User::class)->make ([
-            'name' =>'Kevin',
-            'lastname'=>'Youkhana',
-            'email' => 'kyoukhana@gmail.com',
+            'name' =>'vue',
+            'lastname'=>'auth',
+            'email' => 'vueauth@gmail.com',
             'lang' => 'en',
-            'role_id'=>'1',
-            'password' => bcrypt('EmuKrg2012')])->save();
+            'activated' => '1',
+            'role'=>'admin',
+            'password' => bcrypt('vue123')])->save();
 
 
        // $this->call(UsersTableSeeder::class);
