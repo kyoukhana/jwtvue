@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 59:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -85,46 +85,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            context: 'login context',
-            data: {
-                body: {
-                    email: 'vueauth@gmail.com',
-                    password: 'vue123'
+    /* harmony default export */ __webpack_exports__["default"] = ({
+        data: function data() {
+            return {
+                context: 'login context',
+                data: {
+                    body: {
+                        email: 'vueauth@gmail.com',
+                        password: 'vue123'
+                    },
+                    rememberMe: false
                 },
-                rememberMe: false
-            },
-            error: null
-        };
-    },
+                error: null
+            };
+        },
 
 
-    mounted: function () {
-        this.$nextTick(function () {
-            componentHandler.upgradeDom();
-            componentHandler.upgradeAllRegistered();
-        })
-    },
+        mounted: function () {
+//            this.$nextTick(function () {
+//                componentHandler.upgradeDom();
+//                componentHandler.upgradeAllRegistered();
+//            })
+        },
 
-    methods: {
-        processlogin: function () {
+        methods: {
+            processlogin: function () {
 
-            var redirect = this.$auth.redirect();
-            this.$auth.login({
-                body: this.data.body,
-                rememberMe: true,
-                redirect: '/admin/dashboard',
-            });
+                var redirect = this.$auth.redirect();
+                this.$auth.login({
+                    body: this.data.body,
+                    rememberMe: true,
+                    redirect: '/admin/dashboard',
+                });
 
 
 
 
+            }
+            /*End process form */
         }
-        /*End process form */
-    }
-});
+    });
 
 
 /***/ }),
@@ -137,7 +137,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "\nbody{\n    height:100%;\n}\n.mdl-layout-login {\n    align-items: center;\n    justify-content: center;\n}\n.mdl-layout__content-login {\n    padding: 24px;\n    flex: none;\n}\n.bg-row {\n    background: url('https://getmdl.io/assets/demos/transparent.jpg') center / cover;\n}\n.demo-layout-transparent .mdl-layout__header,\n.demo-layout-transparent .mdl-layout__drawer-button {\n    /* This background is dark, so we set text to white. Use 87% black instead if\n       your background is light. */\n    color: white;\n}\n\n", ""]);
+exports.push([module.i, "\nbody{\n    height:100%;\n}\n.mdl-layout-login {\n    align-items: center;\n    justify-content: center;\n}\n.mdl-layout__content-login {\n    padding: 24px;\n    flex: none;\n}\n.demo-layout-transparent .mdl-layout__header,\n.demo-layout-transparent .mdl-layout__drawer-button {\n    /* This background is dark, so we set text to white. Use 87% black instead if\n       your background is light. */\n    color: white;\n}\n\n", ""]);
 
 // exports
 

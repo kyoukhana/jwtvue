@@ -27,6 +27,12 @@ const router = new VueRouter({
             path: '/403',
             component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}
         },
+
+        {
+            path: '/404',
+            component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}
+        },
+
     {
         path: '/admin/login',
         name:'adminlogin',
@@ -67,6 +73,7 @@ Vue.use(VueAuth,{
     loginData: {url: 'api/auth', method: 'POST', redirect: 'dashboard'},
     logoutData: {url: 'api/logout', method: 'POST', redirect: 'login',  makeRequest: false},
     fetchData: {url: 'api/account', method: 'GET' , enabled: true},
+    rolesVar: 'role',
     refreshData: {enabled: false}
 });
 

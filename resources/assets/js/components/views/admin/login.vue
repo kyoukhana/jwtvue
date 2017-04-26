@@ -56,10 +56,10 @@
 
 
         mounted: function () {
-            this.$nextTick(function () {
-                componentHandler.upgradeDom();
-                componentHandler.upgradeAllRegistered();
-            })
+//            this.$nextTick(function () {
+//                componentHandler.upgradeDom();
+//                componentHandler.upgradeAllRegistered();
+//            })
         },
 
         methods: {
@@ -94,9 +94,6 @@
         flex: none;
     }
 
-    .bg-row {
-        background: url('https://getmdl.io/assets/demos/transparent.jpg') center / cover;
-    }
     .demo-layout-transparent .mdl-layout__header,
     .demo-layout-transparent .mdl-layout__drawer-button {
         /* This background is dark, so we set text to white. Use 87% black instead if
