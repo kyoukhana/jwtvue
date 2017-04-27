@@ -8,41 +8,34 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueResource from 'vue-resource'
 
+
+/*Route Files */
+import dashboard from './routes/dashboard'
+import sitehome from './routes/site'
+
+
 Vue.use(VueRouter);
 Vue.use(VueMdl);
 Vue.use(VueAxios, axios);
 Vue.use(VueResource);
 
 
+/*Define Routes Object */
+const loadRoutes = [
+    ...dashboard,
+    ...sitehome
+];
+
+/*Define Router */
 const router = new VueRouter({
     hashbang: false,
     linkActiveClass: 'active',
     mode: 'history',
-    routes: [
-        {path: '/', component: (resolve) => { require(['./components/views/home.vue'], resolve)}},
-        {path: '/403', component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}},
-        {path: '/404', component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}},
-        {path: '/dashboard', component: (resolve) => { require(['./components/views/admin/dashboard.vue'], resolve)},
-            children:[
-                {path: '', meta: {auth: ['admin']}, component: (resolve) => { require(['./components/views/admin/dashboardHome.vue'], resolve)}},
-                {path: 'login', component: (resolve) => { require(['./components/views/admin/login.vue'], resolve)},
-                    children:[
-                        { path: '', component: (resolve) => { require(['./components/views/admin/loginhome.vue'], resolve)}}
-                    ]
-                }
-
-            ]
-        }
-
-    ]
+    routes:loadRoutes
 });
 
-
-
-
-
-/*Set VUE ROUTER */
 Vue.router = router;
+/*End Define Router */
 
 //Vue.axios.defaults.baseURL = domainUrl;
 //Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');

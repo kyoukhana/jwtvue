@@ -138,13 +138,13 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://www.kevinyoukhana.com/js/";
+/******/ 	__webpack_require__.p = "http://www.jwt.com/js/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 57);
+/******/ 	return __webpack_require__(__webpack_require__.s = 59);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -608,7 +608,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(55)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(57)))
 
 /***/ }),
 /* 3 */
@@ -883,11 +883,11 @@ module.exports = function bind(fn, thisArg) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _vue = __webpack_require__(53);
+var _vue = __webpack_require__(55);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(52);
+var _vueRouter = __webpack_require__(54);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
@@ -895,15 +895,15 @@ var _vueAuth = __webpack_require__(16);
 
 var _vueAuth2 = _interopRequireDefault(_vueAuth);
 
-var _app = __webpack_require__(46);
+var _app = __webpack_require__(48);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _materialDesignLite = __webpack_require__(44);
+var _materialDesignLite = __webpack_require__(46);
 
 var _materialDesignLite2 = _interopRequireDefault(_materialDesignLite);
 
-var _vueMdl = __webpack_require__(50);
+var _vueMdl = __webpack_require__(52);
 
 var _vueMdl2 = _interopRequireDefault(_vueMdl);
 
@@ -911,48 +911,47 @@ var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _vueAxios = __webpack_require__(45);
+var _vueAxios = __webpack_require__(47);
 
 var _vueAxios2 = _interopRequireDefault(_vueAxios);
 
-var _vueResource = __webpack_require__(51);
+var _vueResource = __webpack_require__(53);
 
 var _vueResource2 = _interopRequireDefault(_vueResource);
 
+var _dashboard = __webpack_require__(38);
+
+var _dashboard2 = _interopRequireDefault(_dashboard);
+
+var _site = __webpack_require__(39);
+
+var _site2 = _interopRequireDefault(_site);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/*Route Files */
+
 
 _vue2.default.use(_vueRouter2.default);
 _vue2.default.use(_vueMdl2.default);
 _vue2.default.use(_vueAxios2.default, _axios2.default);
 _vue2.default.use(_vueResource2.default);
 
+/*Define Routes Object */
+var loadRoutes = [].concat(_toConsumableArray(_dashboard2.default), _toConsumableArray(_site2.default));
+
+/*Define Router */
 var router = new _vueRouter2.default({
     hashbang: false,
     linkActiveClass: 'active',
     mode: 'history',
-    routes: [{ path: '/', component: function component(resolve) {
-            __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(62)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        } }, { path: '/403', component: function component(resolve) {
-            __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        } }, { path: '/404', component: function component(resolve) {
-            __webpack_require__.e/* require */(0/* duplicate */).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        } }, { path: '/dashboard', component: function component(resolve) {
-            __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(58)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        },
-        children: [{ path: '', meta: { auth: ['admin'] }, component: function component(resolve) {
-                __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(59)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-            } }, { path: 'login', component: function component(resolve) {
-                __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-            },
-            children: [{ path: '', component: function component(resolve) {
-                    __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(61)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-                } }]
-        }]
-    }]
+    routes: loadRoutes
 });
 
-/*Set VUE ROUTER */
 _vue2.default.router = router;
+/*End Define Router */
 
 //Vue.axios.defaults.baseURL = domainUrl;
 //Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
@@ -1056,7 +1055,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(49)
+var listToStyles = __webpack_require__(51)
 
 /*
 type StyleObject = {
@@ -3043,6 +3042,48 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = [{ path: '/dashboard', meta: { auth: ['admin'] }, component: function component(resolve) {
+        __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    },
+    children: [{ path: '', component: function component(resolve) {
+            __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(61)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        } }, { path: 'login', meta: { auth: false }, component: function component(resolve) {
+            __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(62)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        },
+        children: [{ path: '', component: function component(resolve) {
+                __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(63)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+            } }]
+    }]
+}];
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = [{ path: '/', component: function component(resolve) {
+        __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(64)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    } }, { path: '/403', component: function component(resolve) {
+        __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    } }, { path: '/404', component: function component(resolve) {
+        __webpack_require__.e/* require */(0/* duplicate */).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    } }];
+
+/***/ }),
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3063,46 +3104,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-// imports
-exports.i(__webpack_require__(41), "");
-
-// module
-exports.push([module.i, "\nbody{\n    height:100%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-// imports
-
-
-// module
-exports.push([module.i, "/**\n * Copyright 2015 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nhtml, body {\n    font-family: 'Roboto', 'Helvetica', sans-serif;\n}\n.app-avatar {\n    width: 48px;\n    height: 48px;\n    border-radius: 24px;\n}\n.app-layout .app-header .mdl-textfield {\n    padding: 0px;\n    margin-top: 41px;\n}\n.app-layout .app-header .mdl-textfield .mdl-textfield__expandable-holder {\n    bottom: 19px;\n}\n.app-layout .mdl-layout__header .mdl-layout__drawer-button {\n    color: rgba(0, 0, 0, 0.54);\n}\n.mdl-layout__drawer .avatar {\n    margin-bottom: 16px;\n}\n.app-drawer {\n    border: none;\n}\n/* iOS Safari specific workaround */\n.app-drawer .mdl-menu__container {\n    z-index: -1;\n}\n.app-drawer .app-navigation {\n    z-index: -2;\n}\n/* END iOS Safari specific workaround */\n.app-drawer .mdl-menu .mdl-menu__item {\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n}\n.app-drawer-header {\n    box-sizing: border-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-justify-content: flex-end;\n    -ms-flex-pack: end;\n    justify-content: flex-end;\n    padding: 16px;\n    height: 151px;\n}\n.app-avatar-dropdown {\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    position: relative;\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n    width: 100%;\n}\n\n.app-navigation {\n    -webkit-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1;\n}\n.app-layout .app-navigation .mdl-navigation__link {\n    display: -webkit-flex !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n    color: rgba(255, 255, 255, 0.56);\n    font-weight: 500;\n}\n.app-layout .app-navigation .mdl-navigation__link:hover {\n    background-color: #00BCD4;\n    color: #37474F;\n}\n.app-navigation .mdl-navigation__link .material-icons {\n    font-size: 24px;\n    color: rgba(255, 255, 255, 0.56);\n    margin-right: 32px;\n}\n\n.app-content {\n    max-width: 1080px;\n}\n\n.app-charts {\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    -ms-grid-row-align: center;\n    align-items: center;\n}\n.app-chart:nth-child(1) {\n    color: #ACEC00;\n}\n.app-chart:nth-child(2) {\n    color: #00BBD6;\n}\n.app-chart:nth-child(3) {\n    color: #BA65C9;\n}\n.app-chart:nth-child(4) {\n    color: #EF3C79;\n}\n.app-graphs {\n    padding: 16px 32px;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-items: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n}\n/* TODO: Find a proper solution to have the graphs\n * not float around outside their container in IE10/11.\n * Using a browserhacks.com solution for now.\n */\n_:-ms-input-placeholder, :root .app-graphs {\n    min-height: 664px;\n}\n_:-ms-input-placeholder, :root .app-graph {\n    max-height: 300px;\n}\n/* TODO end */\n.app-graph:nth-child(1) {\n    color: #00b9d8;\n}\n.app-graph:nth-child(2) {\n    color: #d9006e;\n}\n\n.app-cards {\n    -webkit-align-items: flex-start;\n    -ms-flex-align: start;\n    -ms-grid-row-align: flex-start;\n    align-items: flex-start;\n    -webkit-align-content: flex-start;\n    -ms-flex-line-pack: start;\n    align-content: flex-start;\n}\n.app-cards .app-separator {\n    height: 32px;\n}\n.app-cards .mdl-card__title.mdl-card__title {\n    color: white;\n    font-size: 24px;\n    font-weight: 400;\n}\n.app-cards ul {\n    padding: 0;\n}\n.app-cards h3 {\n    font-size: 1em;\n}\n.app-updates .mdl-card__title {\n    min-height: 200px;\n    background-position: 90% 100%;\n    background-repeat: no-repeat;\n}\n.app-cards .mdl-card__actions a {\n    color: #00BCD4;\n    text-decoration: none;\n}\n\n.app-options h3 {\n    margin: 0;\n}\n.app-options .mdl-checkbox__box-outline {\n    border-color: rgba(255, 255, 255, 0.89);\n}\n.app-options ul {\n    margin: 0;\n    list-style-type: none;\n}\n.app-options li {\n    margin: 4px 0;\n}\n.app-options .material-icons {\n    color: rgba(255, 255, 255, 0.89);\n}\n.app-options .mdl-card__actions {\n    height: 64px;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    box-sizing: border-box;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n}\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 exports.i(__webpack_require__(43), "");
-exports.i(__webpack_require__(40), "");
-exports.i(__webpack_require__(42), "");
 
 // module
-exports.push([module.i, "\n", ""]);
+exports.push([module.i, "\nbody{\n    height:100%;\n}\n", ""]);
 
 // exports
 
@@ -3116,13 +3126,44 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "/*Text decoration */\na{text-decoration: none;}\n\n.mdl-card__users{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M723.3 70.1c7.9-1.9 15.1-2.8 21.7-2.8 6.6 0 13.9 0.9 21.7 2.8 7.9 1.9 15.1 5 21.6 9.3 6.5 4.3 9.8 9.2 9.8 14.6v19.9H691.9V94c0-5.4 3.3-10.2 9.8-14.6C708.3 75.1 715.4 72 723.3 70.1zM772.1 85.2c-8.9-3.4-17.9-5.1-27-5.1 -9.1 0-18.1 1.7-27 5.1 -8.9 3.4-13.4 6.4-13.4 8.9v7.1h80.8V94C785.4 91.5 781 88.6 772.1 85.2zM726.4 15.6c5.2-5.3 11.4-7.9 18.6-7.9 7.2 0 13.5 2.6 18.6 7.9 5.2 5.3 7.8 11.5 7.8 18.8 0 7.3-2.6 13.5-7.8 18.6 -5.2 5.2-11.4 7.8-18.6 7.8 -7.3 0-13.5-2.6-18.6-7.8 -5.2-5.2-7.8-11.4-7.8-18.6C718.7 27.1 721.2 20.9 726.4 15.6zM755 24.4c-2.7-2.7-6-4-9.9-4 -3.9 0-7.3 1.3-9.9 4 -2.7 2.7-4 6-4 9.9 0 3.9 1.3 7.2 4 9.8 2.7 2.6 6 3.9 9.9 3.9 3.9 0 7.2-1.3 9.9-3.9 2.7-2.6 4-5.8 4-9.8C759 30.4 757.7 27.1 755 24.4z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-position: 90% 100%;\n    background-size: 35%;\n    background-color:#59717A !important;\n}\n\n\n.mdl-card__users.addTracks{\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M795.9 69.8h-43.6v43.6h-14.3V69.8h-43.6V55.5h43.6V11.8h14.3v43.6h43.6V69.8z\" fill=\"white\"/></svg> ') no-repeat bottom right;\n    background-color: #6899a1 !important;\n}\n\n\n\n\n.mdl-card__blank{\n    background-image: none;\n    padding:20px;\n    color:#000;\n    background-color:#fff !important;\n}\n\n\n.mdl-card__tracks{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M690.7 66.6V42.3h12.2v24.3H690.7zM714.8 90.7V18.2H727v72.4H714.8zM739.1 114.7V-5.8H751v120.5H739.1zM763.2 90.7V18.2h12.2v72.4H763.2zM787.2 42.3h12.2v24.3h-12.2V42.3z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-size: 35%;\n    color:#fff;\n    background-color:#FF5722 !important;\n}\n\n.mdl-card__reporting{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M691.6 7.5h105.9v14.9H691.6V7.5zM797.5 37.6v15.2H691.6V37.6H797.5zM691.6 82.9V67.6h105.9v15.2H691.6zM757.9 98.1v14.9h-66.2V98.1H757.9z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-size: 35%;\n    color:#fff;\n    background-color:#4DB6AC !important;\n}\n\n\n.mdl-card__blank{\n    min-height: 200px;\n    background-image: none;\n    color:#fff;\n    background-color:#FFF !important;\n}\n\n\n\n\n.mdl-card__title,.mdl-card__tracks,.mdl-card__users,.mdl-card__reporting {\n    -webkit-align-items:center;\n    -ms-flex-align:center;\n    align-items:center;\n    color:#000;\n    display:block;\n    display:-webkit-flex;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-justify-content:stretch;\n    -ms-flex-pack:stretch;\n    justify-content:stretch;\n    line-height:normal;\n    padding:16px;\n    -webkit-perspective-origin:165px 56px;\n    perspective-origin:165px 56px;\n    -webkit-transform-origin:165px 56px;\n    transform-origin:165px 56px;\n    box-sizing:border-box;\n    color:#fff;\n}\n\n.mdl-data-table {\n    position: relative;\n    border: none;\n    border-collapse: collapse;\n    white-space: nowrap;\n    font-size: 13px;\n    background-color: transparent;\n}\n\n/*Clear Shadow */\n.box-shadow-clear{box-shadow: none}\n\n/*Select Boxes */\n/* Style Select Field */\nselect {\n    font-family: inherit;\n    background-color: transparent;\n    width: 100%;\n    padding: 4px 0;\n    font-size: 16px;\n    color: rgba(0,0,0, 0.26);\n    border: none;\n    border-bottom: 1px solid rgba(0,0,0, 0.12);\n}\n\n/* Remove focus */\nselect:focus {\n    outline: none;\n}\n\n/* Hide label */\n.mdl-selectfield label {\n    display: none;\n}\n\n/* Use custom arrow */\n.mdl-selectfield select {\n    appearance: none;\n}\n\n.mdl-selectfield {\n    font-family: 'Roboto','Helvetica','Arial',sans-serif;\n    position: relative;\n}\n.mdl-selectfield:after {\n    position: absolute;\n    top: 0.75em;\n    right: 0.5em;\n    /* Styling the down arrow */\n    width: 0;\n    height: 0;\n    padding: 0;\n    content: '';\n    border-left: .25em solid transparent;\n    border-right: .25em solid transparent;\n    border-top: 0.375em solid rgba(0,0,0, 0.12);\n    pointer-events: none;\n}\n\nh3{font-size: 20px}\n\n\n/*Player Stuff */\n#audioplayer{\n    width: 480px;\n    height: 60px;\n    margin: 50px auto auto auto;\n    border: solid;\n}\n\n#pButton{\n    height:60px;\n    width: 60px;\n    border: none;\n    background-size: 50% 50%;\n    background-repeat: no-repeat;\n    background-position: center;\n    float:left;\n    outline:none;\n}\n\n\n\n\n#timeline{\n    width: 400px;\n    height: 20px;\n    margin-top: 20px;\n    float: left;\n    border-radius: 15px;\n    background: rgba(0,0,0,.3);\n    display:none;\n\n}\n#playhead{\n    width: 18px;\n    height: 18px;\n    border-radius: 50%;\n    margin-top: 1px;\n    background: rgba(0, 0, 0,1);\n\n}\n#DurationLeft,#ElapsedTime\n{\n    cursor:pointer;\n    height: 20px;\n    margin-top: 20px;\n    float:left;\n}\n\n\n/*image radius rotate */\n\n.rotateimage {\n    -webkit-animation-name: spin;\n    -webkit-animation-duration: 4000ms;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: linear;\n    -moz-animation-name: spin;\n    -moz-animation-duration: 4000ms;\n    -moz-animation-iteration-count: infinite;\n    -moz-animation-timing-function: linear;\n    -ms-animation-name: spin;\n    -ms-animation-duration: 4000ms;\n    -ms-animation-iteration-count: infinite;\n    -ms-animation-timing-function: linear;\n\n    animation-name: spin;\n    animation-duration: 4000ms;\n    animation-iteration-count: infinite;\n    animation-timing-function: linear;\n}\n@-ms-keyframes spin {\n    from { -ms-transform: rotate(0deg); }\n    to { -ms-transform: rotate(360deg); }\n}\n@-moz-keyframes spin {\n    from { -moz-transform: rotate(0deg); }\n    to { -moz-transform: rotate(360deg); }\n}\n@-webkit-keyframes spin {\n    from { -webkit-transform: rotate(0deg); }\n    to { -webkit-transform: rotate(360deg); }\n}\n@keyframes spin {\n    from {\n        transform:rotate(0deg);\n    }\n    to {\n        transform:rotate(360deg);\n    }\n}\n\n/*Custom MDL */\n.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {\n    background: #009688 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K);\n}\n\n\n/*Submit blur */\n.submitted {\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    -webkit-filter: blur(5px);\n    -moz-filter: blur(5px);\n    -o-filter: blur(5px);\n    -ms-filter: blur(5px);\n    filter: blur(5px);\n}\n\n.strikeOutText{\n    text-decoration: line-through;\n}\n\n", ""]);
+exports.push([module.i, "/**\n * Copyright 2015 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nhtml, body {\n    font-family: 'Roboto', 'Helvetica', sans-serif;\n}\n.app-avatar {\n    width: 48px;\n    height: 48px;\n    border-radius: 24px;\n}\n.app-layout .app-header .mdl-textfield {\n    padding: 0px;\n    margin-top: 41px;\n}\n.app-layout .app-header .mdl-textfield .mdl-textfield__expandable-holder {\n    bottom: 19px;\n}\n.app-layout .mdl-layout__header .mdl-layout__drawer-button {\n    color: rgba(0, 0, 0, 0.54);\n}\n.mdl-layout__drawer .avatar {\n    margin-bottom: 16px;\n}\n.app-drawer {\n    border: none;\n}\n/* iOS Safari specific workaround */\n.app-drawer .mdl-menu__container {\n    z-index: -1;\n}\n.app-drawer .app-navigation {\n    z-index: -2;\n}\n/* END iOS Safari specific workaround */\n.app-drawer .mdl-menu .mdl-menu__item {\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n}\n.app-drawer-header {\n    box-sizing: border-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-justify-content: flex-end;\n    -ms-flex-pack: end;\n    justify-content: flex-end;\n    padding: 16px;\n    height: 151px;\n}\n.app-avatar-dropdown {\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    position: relative;\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n    width: 100%;\n}\n\n.app-navigation {\n    -webkit-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1;\n}\n.app-layout .app-navigation .mdl-navigation__link {\n    display: -webkit-flex !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n    color: rgba(255, 255, 255, 0.56);\n    font-weight: 500;\n}\n.app-layout .app-navigation .mdl-navigation__link:hover {\n    background-color: #00BCD4;\n    color: #37474F;\n}\n.app-navigation .mdl-navigation__link .material-icons {\n    font-size: 24px;\n    color: rgba(255, 255, 255, 0.56);\n    margin-right: 32px;\n}\n\n.app-content {\n    max-width: 1080px;\n}\n\n.app-charts {\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    -ms-grid-row-align: center;\n    align-items: center;\n}\n.app-chart:nth-child(1) {\n    color: #ACEC00;\n}\n.app-chart:nth-child(2) {\n    color: #00BBD6;\n}\n.app-chart:nth-child(3) {\n    color: #BA65C9;\n}\n.app-chart:nth-child(4) {\n    color: #EF3C79;\n}\n.app-graphs {\n    padding: 16px 32px;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-items: stretch;\n    -ms-flex-align: stretch;\n    align-items: stretch;\n}\n/* TODO: Find a proper solution to have the graphs\n * not float around outside their container in IE10/11.\n * Using a browserhacks.com solution for now.\n */\n_:-ms-input-placeholder, :root .app-graphs {\n    min-height: 664px;\n}\n_:-ms-input-placeholder, :root .app-graph {\n    max-height: 300px;\n}\n/* TODO end */\n.app-graph:nth-child(1) {\n    color: #00b9d8;\n}\n.app-graph:nth-child(2) {\n    color: #d9006e;\n}\n\n.app-cards {\n    -webkit-align-items: flex-start;\n    -ms-flex-align: start;\n    -ms-grid-row-align: flex-start;\n    align-items: flex-start;\n    -webkit-align-content: flex-start;\n    -ms-flex-line-pack: start;\n    align-content: flex-start;\n}\n.app-cards .app-separator {\n    height: 32px;\n}\n.app-cards .mdl-card__title.mdl-card__title {\n    color: white;\n    font-size: 24px;\n    font-weight: 400;\n}\n.app-cards ul {\n    padding: 0;\n}\n.app-cards h3 {\n    font-size: 1em;\n}\n.app-updates .mdl-card__title {\n    min-height: 200px;\n    background-position: 90% 100%;\n    background-repeat: no-repeat;\n}\n.app-cards .mdl-card__actions a {\n    color: #00BCD4;\n    text-decoration: none;\n}\n\n.app-options h3 {\n    margin: 0;\n}\n.app-options .mdl-checkbox__box-outline {\n    border-color: rgba(255, 255, 255, 0.89);\n}\n.app-options ul {\n    margin: 0;\n    list-style-type: none;\n}\n.app-options li {\n    margin: 4px 0;\n}\n.app-options .material-icons {\n    color: rgba(255, 255, 255, 0.89);\n}\n.app-options .mdl-card__actions {\n    height: 64px;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    box-sizing: border-box;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n}\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
+exports.i(__webpack_require__(45), "");
+exports.i(__webpack_require__(42), "");
+exports.i(__webpack_require__(44), "");
+
+// module
+exports.push([module.i, "\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
+exports.push([module.i, "/*Text decoration */\na{text-decoration: none;}\n\n.mdl-card__users{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M723.3 70.1c7.9-1.9 15.1-2.8 21.7-2.8 6.6 0 13.9 0.9 21.7 2.8 7.9 1.9 15.1 5 21.6 9.3 6.5 4.3 9.8 9.2 9.8 14.6v19.9H691.9V94c0-5.4 3.3-10.2 9.8-14.6C708.3 75.1 715.4 72 723.3 70.1zM772.1 85.2c-8.9-3.4-17.9-5.1-27-5.1 -9.1 0-18.1 1.7-27 5.1 -8.9 3.4-13.4 6.4-13.4 8.9v7.1h80.8V94C785.4 91.5 781 88.6 772.1 85.2zM726.4 15.6c5.2-5.3 11.4-7.9 18.6-7.9 7.2 0 13.5 2.6 18.6 7.9 5.2 5.3 7.8 11.5 7.8 18.8 0 7.3-2.6 13.5-7.8 18.6 -5.2 5.2-11.4 7.8-18.6 7.8 -7.3 0-13.5-2.6-18.6-7.8 -5.2-5.2-7.8-11.4-7.8-18.6C718.7 27.1 721.2 20.9 726.4 15.6zM755 24.4c-2.7-2.7-6-4-9.9-4 -3.9 0-7.3 1.3-9.9 4 -2.7 2.7-4 6-4 9.9 0 3.9 1.3 7.2 4 9.8 2.7 2.6 6 3.9 9.9 3.9 3.9 0 7.2-1.3 9.9-3.9 2.7-2.6 4-5.8 4-9.8C759 30.4 757.7 27.1 755 24.4z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-position: 90% 100%;\n    background-size: 35%;\n    background-color:#59717A !important;\n}\n\n\n.mdl-card__users.addTracks{\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M795.9 69.8h-43.6v43.6h-14.3V69.8h-43.6V55.5h43.6V11.8h14.3v43.6h43.6V69.8z\" fill=\"white\"/></svg> ') no-repeat bottom right;\n    background-color: #6899a1 !important;\n}\n\n\n\n\n.mdl-card__blank{\n    background-image: none;\n    padding:20px;\n    color:#000;\n    background-color:#fff !important;\n}\n\n\n.mdl-card__tracks{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M690.7 66.6V42.3h12.2v24.3H690.7zM714.8 90.7V18.2H727v72.4H714.8zM739.1 114.7V-5.8H751v120.5H739.1zM763.2 90.7V18.2h12.2v72.4H763.2zM787.2 42.3h12.2v24.3h-12.2V42.3z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-size: 35%;\n    color:#fff;\n    background-color:#FF5722 !important;\n}\n\n.mdl-card__reporting{\n    min-height: 200px;\n    background-image: none;\n    background: url('data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"684.1 -6 121.9 120.9\" enable-background=\"new 684.1 -6 121.9 120.9\" xml:space=\"preserve\"><path d=\"M691.6 7.5h105.9v14.9H691.6V7.5zM797.5 37.6v15.2H691.6V37.6H797.5zM691.6 82.9V67.6h105.9v15.2H691.6zM757.9 98.1v14.9h-66.2V98.1H757.9z\" fill=\"white\"/></svg>') no-repeat bottom right;\n    background-size: 35%;\n    color:#fff;\n    background-color:#4DB6AC !important;\n}\n\n\n.mdl-card__blank{\n    min-height: 200px;\n    background-image: none;\n    color:#fff;\n    background-color:#FFF !important;\n}\n\n\n\n\n.mdl-card__title,.mdl-card__tracks,.mdl-card__users,.mdl-card__reporting {\n    -webkit-align-items:center;\n    -ms-flex-align:center;\n    align-items:center;\n    color:#000;\n    display:block;\n    display:-webkit-flex;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-justify-content:stretch;\n    -ms-flex-pack:stretch;\n    justify-content:stretch;\n    line-height:normal;\n    padding:16px;\n    -webkit-perspective-origin:165px 56px;\n    perspective-origin:165px 56px;\n    -webkit-transform-origin:165px 56px;\n    transform-origin:165px 56px;\n    box-sizing:border-box;\n    color:#fff;\n}\n\n.mdl-data-table {\n    position: relative;\n    border: none;\n    border-collapse: collapse;\n    white-space: nowrap;\n    font-size: 13px;\n    background-color: transparent;\n}\n\n/*Clear Shadow */\n.box-shadow-clear{box-shadow: none}\n\n/*Select Boxes */\n/* Style Select Field */\nselect {\n    font-family: inherit;\n    background-color: transparent;\n    width: 100%;\n    padding: 4px 0;\n    font-size: 16px;\n    color: rgba(0,0,0, 0.26);\n    border: none;\n    border-bottom: 1px solid rgba(0,0,0, 0.12);\n}\n\n/* Remove focus */\nselect:focus {\n    outline: none;\n}\n\n/* Hide label */\n.mdl-selectfield label {\n    display: none;\n}\n\n/* Use custom arrow */\n.mdl-selectfield select {\n    appearance: none;\n}\n\n.mdl-selectfield {\n    font-family: 'Roboto','Helvetica','Arial',sans-serif;\n    position: relative;\n}\n.mdl-selectfield:after {\n    position: absolute;\n    top: 0.75em;\n    right: 0.5em;\n    /* Styling the down arrow */\n    width: 0;\n    height: 0;\n    padding: 0;\n    content: '';\n    border-left: .25em solid transparent;\n    border-right: .25em solid transparent;\n    border-top: 0.375em solid rgba(0,0,0, 0.12);\n    pointer-events: none;\n}\n\nh3{font-size: 20px}\n\n\n/*Player Stuff */\n#audioplayer{\n    width: 480px;\n    height: 60px;\n    margin: 50px auto auto auto;\n    border: solid;\n}\n\n#pButton{\n    height:60px;\n    width: 60px;\n    border: none;\n    background-size: 50% 50%;\n    background-repeat: no-repeat;\n    background-position: center;\n    float:left;\n    outline:none;\n}\n\n\n\n\n#timeline{\n    width: 400px;\n    height: 20px;\n    margin-top: 20px;\n    float: left;\n    border-radius: 15px;\n    background: rgba(0,0,0,.3);\n    display:none;\n\n}\n#playhead{\n    width: 18px;\n    height: 18px;\n    border-radius: 50%;\n    margin-top: 1px;\n    background: rgba(0, 0, 0,1);\n\n}\n#DurationLeft,#ElapsedTime\n{\n    cursor:pointer;\n    height: 20px;\n    margin-top: 20px;\n    float:left;\n}\n\n\n/*image radius rotate */\n\n.rotateimage {\n    -webkit-animation-name: spin;\n    -webkit-animation-duration: 4000ms;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: linear;\n    -moz-animation-name: spin;\n    -moz-animation-duration: 4000ms;\n    -moz-animation-iteration-count: infinite;\n    -moz-animation-timing-function: linear;\n    -ms-animation-name: spin;\n    -ms-animation-duration: 4000ms;\n    -ms-animation-iteration-count: infinite;\n    -ms-animation-timing-function: linear;\n\n    animation-name: spin;\n    animation-duration: 4000ms;\n    animation-iteration-count: infinite;\n    animation-timing-function: linear;\n}\n@-ms-keyframes spin {\n    from { -ms-transform: rotate(0deg); }\n    to { -ms-transform: rotate(360deg); }\n}\n@-moz-keyframes spin {\n    from { -moz-transform: rotate(0deg); }\n    to { -moz-transform: rotate(360deg); }\n}\n@-webkit-keyframes spin {\n    from { -webkit-transform: rotate(0deg); }\n    to { -webkit-transform: rotate(360deg); }\n}\n@keyframes spin {\n    from {\n        transform:rotate(0deg);\n    }\n    to {\n        transform:rotate(360deg);\n    }\n}\n\n/*Custom MDL */\n.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {\n    background: #009688 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K);\n}\n\n\n/*Submit blur */\n.submitted {\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    -webkit-filter: blur(5px);\n    -moz-filter: blur(5px);\n    -o-filter: blur(5px);\n    -ms-filter: blur(5px);\n    filter: blur(5px);\n}\n\n.strikeOutText{\n    text-decoration: line-through;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -3136,7 +3177,7 @@ exports.push([module.i, "/**\n * material-design-lite - Material Design Componen
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports) {
 
 /**
@@ -3152,7 +3193,7 @@ this.actionHandler_&&(this.actionElement_.textContent=this.actionText_,this.acti
 
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3160,18 +3201,18 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="fun
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):window.Vue&&window.axios&&Vue.use(f,window.axios)}();
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(48)
+__webpack_require__(50)
 
 var Component = __webpack_require__(9)(
   /* script */
-  __webpack_require__(38),
+  __webpack_require__(40),
   /* template */
-  __webpack_require__(47),
+  __webpack_require__(49),
   /* scopeId */
   null,
   /* cssModules */
@@ -3198,7 +3239,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3213,13 +3254,13 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(39);
+var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -3239,7 +3280,7 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 /**
@@ -3272,7 +3313,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -8025,7 +8066,7 @@ return /******/ (function(modules) { // webpackBootstrap
 //# sourceMappingURL=vue-mdl.js.map
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9115,7 +9156,7 @@ var xhrClient = function (request) {
 
 var nodeClient = function (request) {
 
-    var client = __webpack_require__(56);
+    var client = __webpack_require__(58);
 
     return new PromiseObj(function (resolve) {
 
@@ -9579,7 +9620,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12040,7 +12081,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18869,10 +18910,10 @@ setTimeout(function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue$2);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(54)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(56)))
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports) {
 
 var g;
@@ -18899,7 +18940,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -19085,13 +19126,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(8);
