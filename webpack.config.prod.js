@@ -9,7 +9,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve('public/js'),
-        publicPath: 'http://restorechi.com/js/',
+        publicPath: 'http://www.kevinyoukhana.com/js/',
         filename: "app.js"
     },
 

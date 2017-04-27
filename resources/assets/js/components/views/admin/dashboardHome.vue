@@ -1,5 +1,5 @@
 <template>
-    <div><h2>Your Logged IN</h2></div>
+    <div><h2>Dashboard Home</h2></div>
 </template>
 
 <script>

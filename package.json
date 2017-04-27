@@ -58,5 +58,12 @@
     "vuex": "^2.3.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "build": "^0.1.4"
+  },
+
+  "scripts": {
+    "build": "webpack --config webpack.config.prod.js"
   }
 }

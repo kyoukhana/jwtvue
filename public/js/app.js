@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		5: 0
+/******/ 		6: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -138,7 +138,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://www.jwt.com/js/";
+/******/ 	__webpack_require__.p = "http://www.kevinyoukhana.com/js/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -930,40 +930,24 @@ var router = new _vueRouter2.default({
     hashbang: false,
     linkActiveClass: 'active',
     mode: 'history',
-    routes: [{
-        path: '/',
-        component: function component(resolve) {
-            __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(61)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        }
-    }, {
-        path: '/403',
-        component: function component(resolve) {
+    routes: [{ path: '/', component: function component(resolve) {
+            __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(62)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        } }, { path: '/403', component: function component(resolve) {
             __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        }
-    }, {
-        path: '/404',
-        component: function component(resolve) {
+        } }, { path: '/404', component: function component(resolve) {
             __webpack_require__.e/* require */(0/* duplicate */).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        }
-    }, {
-        path: '/admin/login',
-        name: 'adminlogin',
-        component: function component(resolve) {
-            __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-        }
-    }, {
-        path: '/admin/dashboard',
-        name: 'dashadmin',
-        meta: { auth: ['admin'] },
-        component: function component(resolve) {
-            __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(58)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        } }, { path: '/dashboard', component: function component(resolve) {
+            __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(58)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
         },
-        children: [{
-            path: '', component: function component(resolve) {
-                __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(59)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-            }
+        children: [{ path: '', meta: { auth: ['admin'] }, component: function component(resolve) {
+                __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(59)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+            } }, { path: 'login', component: function component(resolve) {
+                __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+            },
+            children: [{ path: '', component: function component(resolve) {
+                    __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(61)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+                } }]
         }]
-
     }]
 });
 
@@ -973,7 +957,7 @@ _vue2.default.router = router;
 //Vue.axios.defaults.baseURL = domainUrl;
 //Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 _vue2.default.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
-_vue2.default.http.options.root = "http://www.kevinyoukhana.com";
+_vue2.default.http.options.root = "";
 
 _vue2.default.use(_vueAuth2.default, {
     authRedirect: '/',
@@ -982,9 +966,9 @@ _vue2.default.use(_vueAuth2.default, {
     router: __webpack_require__(14),
     token: [{ request: 'token', response: 'token', authType: 'bearer', foundIn: 'header' }],
     tokenName: 'token',
-    loginData: { url: 'api/auth', method: 'POST', redirect: 'dashboard' },
-    logoutData: { url: 'api/logout', method: 'POST', redirect: 'login', makeRequest: false },
-    fetchData: { url: 'api/account', method: 'GET', enabled: true },
+    loginData: { url: '/api/auth', method: 'POST', redirect: 'dashboard' },
+    logoutData: { url: '/api/logout', method: 'POST', redirect: 'login', makeRequest: false },
+    fetchData: { url: '/api/account', method: 'GET', enabled: true },
     rolesVar: 'role',
     refreshData: { enabled: false }
 });
@@ -3072,17 +3056,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {}
@@ -3098,7 +3071,7 @@ exports = module.exports = __webpack_require__(1)();
 exports.i(__webpack_require__(41), "");
 
 // module
-exports.push([module.i, "\nbody{\n    height:100%;\n}\n.mdl-layout-login {\n    align-items: center;\n    justify-content: center;\n}\n.mdl-layout__content-login {\n    padding: 24px;\n    flex: none;\n}\n\n", ""]);
+exports.push([module.i, "\nbody{\n    height:100%;\n}\n", ""]);
 
 // exports
 

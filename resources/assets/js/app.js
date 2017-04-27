@@ -18,40 +18,26 @@ const router = new VueRouter({
     hashbang: false,
     linkActiveClass: 'active',
     mode: 'history',
-    routes: [{
-        path: '/',
-        component: (resolve) => { require(['./components/views/home.vue'], resolve)}
-    },
+    routes: [
+        {path: '/', component: (resolve) => { require(['./components/views/home.vue'], resolve)}},
+        {path: '/403', component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}},
+        {path: '/404', component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}},
+        {path: '/dashboard', component: (resolve) => { require(['./components/views/admin/dashboard.vue'], resolve)},
+            children:[
+                {path: '', meta: {auth: ['admin']}, component: (resolve) => { require(['./components/views/admin/dashboardHome.vue'], resolve)}},
+                {path: 'login', component: (resolve) => { require(['./components/views/admin/login.vue'], resolve)},
+                    children:[
+                        { path: '', component: (resolve) => { require(['./components/views/admin/loginhome.vue'], resolve)}}
+                    ]
+                }
 
-        {
-            path: '/403',
-            component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}
-        },
-
-        {
-            path: '/404',
-            component: (resolve) => { require(['./components/views/forbidden.vue'], resolve)}
-        },
-
-    {
-        path: '/admin/login',
-        name:'adminlogin',
-        component: (resolve) => { require(['./components/views/admin/login.vue'], resolve)}
-    },
-    {
-    path: '/admin/dashboard',
-    name:'dashadmin',
-     meta: {auth: ['admin']},
-    component: (resolve) => { require(['./components/views/admin/dashboard.vue'], resolve)},
-     children:[
-        {
-            path: '', component: (resolve) => { require(['./components/views/admin/dashboardHome.vue'], resolve)}
+            ]
         }
-      ]
 
-    }
-  ]
+    ]
 });
+
+
 
 
 
@@ -61,7 +47,7 @@ Vue.router = router;
 //Vue.axios.defaults.baseURL = domainUrl;
 //Vue.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
-Vue.http.options.root="http://www.kevinyoukhana.com";
+Vue.http.options.root="";
 
 Vue.use(VueAuth,{
     authRedirect:'/',
@@ -70,9 +56,9 @@ Vue.use(VueAuth,{
     router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
     token: [{request: 'token', response: 'token', authType: 'bearer', foundIn: 'header'}],
     tokenName:'token',
-    loginData: {url: 'api/auth', method: 'POST', redirect: 'dashboard'},
-    logoutData: {url: 'api/logout', method: 'POST', redirect: 'login',  makeRequest: false},
-    fetchData: {url: 'api/account', method: 'GET' , enabled: true},
+    loginData: {url: '/api/auth', method: 'POST', redirect: 'dashboard'},
+    logoutData: {url: '/api/logout', method: 'POST', redirect: 'login',  makeRequest: false},
+    fetchData: {url: '/api/account', method: 'GET' , enabled: true},
     rolesVar: 'role',
     refreshData: {enabled: false}
 });
